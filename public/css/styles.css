@@ -1,6 +1,273 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+*{
+    box-sizing: border-box;
+}
+h1, h2, h3{
+    font-family: 'lora', serif;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#wrapper{
+    background-color: white;
+    padding: 5px;
+    padding-bottom: 0;
+}
+header{
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+}
+header a{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.siteName{
+    font-size: 1.5rem;
+}
+#tools{
+  float:right;
+}
+#tools a{
+  font-size: .9rem;
+}
+
+
+nav ul{
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+}
+nav ul li{
+    font-size: 1rem;
+}
+nav ul li a{
+    display: inline;
+    text-decoration: none;
+    float: left;
+    color: white;
+    line-height: 2rem;
+    background-color: black;
+}
+.container{
+    position: relative;
+}
+h1{
+    font-size: 1.3rem;
+}
+img{
+    display: block;
+    width: 75%;
+    padding: 0;
+    margin: 0 auto;
+}
+h2{
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+.ad{
+    margin-top: .5rem;
+    background-color:rgb(255, 255, 255, .5);
+    width: 150px;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 1px;
+}
+.ad h2, li {
+    color:dodgerblue;
+}
+.ad h2{
+    margin: 0;
+}
+.ad ul{
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+.button a{
+    text-decoration: none;
+}
+.button{
+    margin: auto;
+    background-color: lightskyblue;
+    padding: .5rem;
+    font-weight: bolder;
+    font-size: .9rem;
+    box-shadow: 5px 5px 20px gray;
+    width: 100px;
+    text-align: center;
+    margin-bottom: .3rem;
+}
+.reviews ul{
+    font-size: 1rem;
+    font-weight: bold;
+    padding-left: 24px;
+}
+.reviews ul li{
+    color: black;
+    padding: 4px;
+    margin-bottom: .2rem;
+
+}
+.upgradeContainer{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.image{
+    background-color: lightskyblue;
+    border: 2px solid black;
+    margin: .5rem;
+}
+.image img{
+    width: 40%;
+    padding: .5rem;
+}
+.description{
+    background-color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .5rem;
+    margin: auto;
+    text-align: center;
+}
+footer{
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 30em){
+    #wrapper{
+        padding: 1.5rem;
+        border: 5px solid lightskyblue;
+        border-radius: .5rem;
+    }
+    header{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    .siteName{
+        font-size: 2.5rem;
+    }
+    #tools a{
+        font-size: 1.2rem;
+      }
+      nav ul li{
+        font-size: 1.5rem;
+    }
+    nav ul a li{
+        line-height: 2.5rem;
+    }
+    h1{
+        font-size: 1.7rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+    nav ul li a{
+        line-height: 2.5rem;
+    }
+    .ad{
+        width: 170px;
+        position: absolute;
+        top: 30px;
+        left: 10px;
+    }
+    .ad ul{
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    .button{
+        padding: .7rem;
+        font-size: 1rem;
+        width: 120px;
+        margin-bottom: .5rem;
+    }
+    .reviews ul{
+        font-size: 1.3rem;
+    }
+    .reviews ul li{
+        margin-bottom: 1rem;
+    }
+    .description{
+        font-size: 1.3rem;
+    }
+    footer{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 60em){
+    body{
+        margin: 0 auto;
+        width: 80%;
+        background-image: url(../images/site/checkerboard.jpg);
+    }
+    #wrapper{
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .siteName{
+        font-size: 3rem;
+    }
+    #tools a{
+        font-size: 1.5rem;
+      }
+    h1{
+        font-size: 2.5rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    h2{
+        font-size: 2.3rem;
+    }
+    nav ul li a{
+        line-height: 2.5rem;
+    }
+    .ad{
+        width: 260px;
+        position: absolute;
+        top: 120px;
+        left: 40px;
+    }
+    .ad ul{
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    .button{
+        font-size: 1.3rem;
+        width: 200px;
+        margin-bottom: 1.5rem;
+        
+    }
+    .reviews ul{
+        font-size: 1.5rem;
+    }
+    .reviews ul li{
+        margin-bottom: 1rem;
+    }
+    .description{
+        font-size: 1.5rem;
+    }
+    .column {
+        float: right;
+        width: 50%;
+        padding: 10px;
+    }
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    footer{
+        font-size: 1rem;
+    }
 }
