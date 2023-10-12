@@ -1,0 +1,21 @@
+<%/* %>
+Content Heading using the title value in the controller 
+<%*/%>
+
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+<%/* %>
+Message Block
+<%*/%>
+
+<%# messages() %>
+
+<%/* %>
+Inventory item to display
+<%*/%>
+
+<%- grid %>
