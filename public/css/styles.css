@@ -34,7 +34,6 @@ header a{
   font-size: .9rem;
 }
 
-
 nav ul{
     padding-left: 0;
     list-style-type: none;
@@ -143,6 +142,54 @@ footer{
     font-size: .8rem;
     font-weight: bold;
 }
+#inv-display{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 2rem;
+}
+.card{
+    justify-content: space-between;
+    padding: 1em;
+    border: 5px solid lightskyblue;
+    border-radius: .5rem;
+    max-width: 350px;
+    height: 250px;
+    text-align: center;
+}
+#inv-display li{
+    margin: auto;
+}
+#inv-display li a{
+    text-decoration: none;
+    color: black;
+    vertical-align: middle;
+    
+}
+#inv-display li a img{
+    max-width: 175px;
+    margin: auto;
+}
+.namePrice h2, span{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: black;
+}
+.namePrice span{
+    display: inline-block;
+    margin: auto;
+}
+th, td {
+    border: 2px solid lightskyblue;
+    text-align: center;
+}
+.error{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
 
 @media only screen and (min-width: 30em){
     #wrapper{
@@ -203,6 +250,15 @@ footer{
     footer{
         font-size: 1rem;
     }
+    #inv-display{
+        grid-template-columns: auto auto auto;
+    }
+    .namePrice h2, span{
+        font-size: 1.2rem;
+    }
+    
+
+    
 }
 
 @media only screen and (min-width: 60em){
@@ -269,5 +325,30 @@ footer{
     }
     footer{
         font-size: 1rem;
+    }
+    #inv-display{
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+    .namePrice h2, span{
+        font-size: 1.4rem;
+    }
+    #inventory{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    #inventory img{
+        width: 100%;
+    }
+    .col_two{
+        padding: .5rem;
+        margin: .5rem;
+        margin-top: 0;
+    }
+    .col_two h2{
+        margin-top: 0;
+    }
+    .info_cols{
+        display: grid;
+        grid-template-columns: 35% 60%;
     }
 }

@@ -1,4 +1,4 @@
-<%/* 
+<%/*
 Content Heading using the title value in the controller 
 */%>
 
@@ -8,13 +8,10 @@ Content Heading using the title value in the controller
       res.redirect('/')
     } %>
 
-<%/* 
+<%/*
 Message Block
 */%>
 
-<%# messages() %>
-
-<%/*
-Inventory item to display
-*/%>
-<div class="inventoryDisplay"><%- grid %></div>
+<div class="error">
+    <%- message %>
+</div>
