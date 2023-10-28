@@ -75,7 +75,7 @@ h2{
     text-align: center;
     justify-content: center;
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 1px;
 }
 .ad h2, li {
@@ -188,7 +188,57 @@ th, td {
     font-size: 1.5rem;
     font-weight: bold;
 }
+.notice{
+    font-size: 1.5rem;
+    font-weight: bold;
+    list-style-type: none;
+}
+#messages{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#messages ul{
+    list-style-type: none;
+}
+form fieldset {
+    margin: 2rem 0;
+    border: 1px solid #445BA9;
+    border-radius: 10px;
+    padding: .5rem 2%;
+}
+form label.top, form div {
+    display: block;
+    padding-top: 1rem;
+    color: #9C2C13;
+    font-size: .8rem;
+}
+form label.top input, form label.top select {
+    display: block;
+    font-size: 1rem;
+    border: solid 1px #999;
+    border-radius: 4px;
+    padding: .75rem;
+    color: #555;
+    width: 100%;
+    max-width: 20rem;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+form label.sbs {
+    display: block;
+    padding: .75rem 0;
+    color: #555;
+}
 
+form label.top input:required {
+    border-left: red solid 6px;
+}
+form label.top input:required:valid {
+    border-left: green solid 6px;
+}
+#login-button.button{
+    margin-top: 1.5rem;
+    border-radius: 5px;
+}
 
 
 @media only screen and (min-width: 30em){
@@ -225,7 +275,7 @@ th, td {
     .ad{
         width: 170px;
         position: absolute;
-        top: 30px;
+        top: 60px;
         left: 10px;
     }
     .ad ul{
@@ -279,8 +329,6 @@ th, td {
       }
     h1{
         font-size: 2.5rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
     }
     h2{
         font-size: 2.3rem;
@@ -291,7 +339,7 @@ th, td {
     .ad{
         width: 260px;
         position: absolute;
-        top: 120px;
+        top: 135px;
         left: 40px;
     }
     .ad ul{

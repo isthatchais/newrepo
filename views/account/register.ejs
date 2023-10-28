@@ -1,0 +1,31 @@
+<%/* 
+Content Heading using the title value in the controller 
+*/%>
+
+<h1><%= title %></h1>
+
+<%# display messages if any%>
+<%- messages() %>
+
+<%# display errors if any%>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
+
+<%# registration form %>
+<form class="register" action="/account/register" method="post">
+    <fieldset>
+        <label class="top">First name<input type="text" id="accountFirstname" name="account_firstname" required value="<%= locals.account_firstname %>"></label>
+        <label class="top">Last name<input type="text" id="accountLastname" name="account_lastname" required value="<%= locals.account_lastname %>"></label>
+        <label class="top">Email address<input type="email" id="accountEmail" name="account_email" required value="<%= locals.account_email %>"></label>
+        <label class="top">Password<input type="password" id="accountPassword" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"></label>
+        <input type="submit" id='login-button' value="Register" class="button">
+        <p>All fields are required. Your password must be 12 characters minimum and contain at least 1 capital letter, 1 number, and 1 special character.</p>
+    </fieldset>
+</form>
+
