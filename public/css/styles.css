@@ -2,7 +2,7 @@
 *{
     box-sizing: border-box;
 }
-h1, h2, h3{
+h1, h2{
     font-family: 'lora', serif;
 }
 body{
@@ -105,6 +105,8 @@ h2{
     width: 100px;
     text-align: center;
     margin-bottom: .3rem;
+    border-radius: 5px;
+    border: solid 2px black;
 }
 .reviews ul{
     font-size: 1rem;
@@ -187,6 +189,7 @@ th, td {
 .error{
     font-size: 1.5rem;
     font-weight: bold;
+    color: red;
 }
 .notice{
     font-size: 1.5rem;
@@ -205,14 +208,18 @@ form fieldset {
     border: 1px solid #445BA9;
     border-radius: 10px;
     padding: .5rem 2%;
+    margin: auto;
+    max-width: 460px;
+    text-align: center;
 }
 form label.top, form div {
     display: block;
     padding-top: 1rem;
     color: #9C2C13;
     font-size: .8rem;
+    margin: auto;
 }
-form label.top input, form label.top select {
+form label.top input, form label.top select, select {
     display: block;
     font-size: 1rem;
     border: solid 1px #999;
@@ -222,6 +229,7 @@ form label.top input, form label.top select {
     width: 100%;
     max-width: 20rem;
     background-color: rgba(0, 0, 0, 0.1);
+    margin: auto;
 }
 form label.sbs {
     display: block;
@@ -235,11 +243,55 @@ form label.top input:required {
 form label.top input:required:valid {
     border-left: green solid 6px;
 }
-#login-button.button{
-    margin-top: 1.5rem;
-    border-radius: 5px;
+#loginForm{
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
+#login-button{
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+.management{
+    font-size: 1.5rem;
+}
+.management a{
+    text-decoration: none;
+    font-weight: bold;
+}
+#pswdBtn{
+    margin-top: 1rem;
+    border: solid 2px black;
+}
+.regAccount{
+    margin: auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#classificationName{
+    margin-bottom: 2rem;
+}
+.textarea{
+    display: block;
+    font-size: 1rem;
+    text-align: left;
+    border: solid 1px #999;
+    border-radius: 4px;
+    padding: .75rem;
+    color: #555;
+    width: 100%;
+    max-width: 20rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    resize: none;
+}
+#inventory-submit{
+    margin-top: 2rem;
+}
 
 @media only screen and (min-width: 30em){
     #wrapper{
@@ -350,7 +402,13 @@ form label.top input:required:valid {
         font-size: 1.3rem;
         width: 200px;
         margin-bottom: 1.5rem;
-        
+    }
+    h3.button{
+        font-size: 1.5rem;
+        width: 300px;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding: 2rem;
     }
     .reviews ul{
         font-size: 1.5rem;

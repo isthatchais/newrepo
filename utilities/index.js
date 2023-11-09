@@ -109,6 +109,22 @@ Util.buildClassificationGrid = async function(data){
     return grid
   }
 
+/* **************************************
+* Build the classification options HTML
+* ************************************ */
+  Util.buildClassificationOptions = async function(data){
+    let options
+    if(data){
+      data.forEach(type => {
+        options += '<option value="' + type.classification_id + '">' + type.classification_name + '</option>'
+      })
+    } else {
+      options = "<option>Options could not be found.</option>"
+    }
+    return options
+  }
+
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

@@ -6,10 +6,10 @@ const utilities = require("../utilities/")
 const regValidate = require('../utilities/account-validation')
 
 //login route
-router.get("/login", accountController.buildLogin);
+router.get("/login", utilities.handleErrors(accountController.buildLogin));
 
 //register route
-router.get("/register", accountController.buildRegister);
+router.get("/register", utilities.handleErrors(accountController.buildRegister));
 
 //register account route
 // Process the registration data

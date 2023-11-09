@@ -1,0 +1,25 @@
+<%/* 
+Content Heading using the title value in the controller 
+*/%>
+
+<h1><%= title %></h1>
+
+<%# display messages if any%>
+<%- messages() %>
+
+<%# display errors if any%>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
+<form class="login" id="classificationForm" action="/inv/add-classification" method="post">
+    <fieldset>
+        <p>All fields are required. The new classification name cannot contain a space or special character of any kind.</p>
+        <label class="top">Classification Name<input type="text" id="classificationName" name="classification_name" required pattern="^[a-zA-Z]*$" value="<%= locals.classification_name %>"></label>
+        <input type="submit" id='login-button' value="Submit" class="button">
+    </fieldset>
+</form>
