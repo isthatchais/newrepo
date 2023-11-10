@@ -93,7 +93,7 @@ invCont.buildAddInventory = async function (req, res, next) {
       `Congratulations, you\'ve added ${classification_name} to the classifications list.`
     )
     let nav = await utilities.getNav()
-    res.status(201).render("/inventory/management", {
+    res.status(201).render("inventory/management", {
       title: "Inventory Management",
       nav,
       errors: null,
@@ -101,7 +101,7 @@ invCont.buildAddInventory = async function (req, res, next) {
   } else {
     let nav = await utilities.getNav()
     req.flash("notice", "Sorry, we failed to add the classification.")
-    res.status(501).render("/inventory/add-classification", {
+    res.status(501).render("inventory/add-classification", {
       title: "Add Classification",
       nav,
       errors: null,
