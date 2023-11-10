@@ -91,15 +91,15 @@ validate.inventoryRules = () => {
 /* ******************************
 * Check data and return errors or continue to registration
 * ***************************** */
-validate.checkClassificationData = async (req, res, next) => {
+validate.checkInventoryData = async (req, res, next) => {
   const { classification_name } = req.body
   let errors = []
   errors = validationResult(req)
   if (!errors.isEmpty()) {
     let nav = await utilities.getNav()
-    res.render("inventory/classification", {
+    res.render("inventory/add-inventory", {
       errors,
-      title: "Add Classification",
+      title: "Add Inventory",
       nav,
       classification_name,
     })
