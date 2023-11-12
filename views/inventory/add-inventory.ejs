@@ -27,10 +27,9 @@ Content Heading using the title value in the controller
         <label class="top">Make<input type="text" id="invMake" name="inv_make" placeholder="Min of 3 characters" required pattern="^[a-zA-Z]{3,}?$" value="<%= locals.inv_make %>"></label>
         <label class="top">Model<input type="text" id="invModel" name="inv_model" placeholder="Min of 3 characters" required pattern="^[a-zA-Z0-9]{3,}?$" value="<%= locals.inv_model %>"></label>
         <label class="top">Year<input type="text" id="invYear" name="inv_year" required pattern="^[0-9]{4}?$" placeholder="4 digit year" value="<%= locals.inv_year %>"></label>
-        <label class="top">Description</label>
-        <textarea id="invDescription" class="textarea" name="inv_description" rows="9" cols="33" required value="<%= locals.inv_description %>"></textarea>
-        <label class="top">Image path<input type="text" id="invImage" name="inv_image" value="/images/vehicles/no-image.png" required pattern="^[^\s]+\.(jpg|jpeg|png|gif|bmp)$" value="<%= locals.inv_image %>"></label>
-        <label class="top">Thumbnail path<input type="text" id="invThumbnail" name="inv_thumbnail" value="/images/vehicles/no-image.png" required pattern="^[^\s]+\.(jpg|jpeg|png|gif|bmp)$" value="<%= locals.inv_thumbnail %>"></label>
+        <label class="top">Description<textarea id="invDescription" class="textarea" name="inv_description" rows="9" cols="33" required></textarea></label>
+        <label class="top">Image path<input type="text" id="invImage" name="inv_image" value="/images/vehicles/no-image.png" required pattern="^[^\s]+\.(jpg|jpeg|png|gif|bmp)$"></label>
+        <label class="top">Thumbnail path<input type="text" id="invThumbnail" name="inv_thumbnail" value="/images/vehicles/no-image.png" required pattern="^[^\s]+\.(jpg|jpeg|png|gif|bmp)$"></label>
         <label class="top">Price<input type="text" id="invPrice" name="inv_price" placeholder="Decimal or Integer" required pattern=^[0-9]\d*(\.\d+)?$ value="<%= locals.inv_price %>"></label>
         <label class="top">Miles<input type="text" id="invMiles" name="inv_miles" placeholder="digits only" required pattern="^[0-9]*$" value="<%= locals.inv_miles %>"></label>
         <label class="top">Color<input type="text" id="invColor" name="inv_color" required value="<%= locals.inv_color %>"></label>

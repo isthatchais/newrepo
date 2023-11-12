@@ -115,7 +115,7 @@ Util.buildClassificationGrid = async function(data){
   Util.buildClassificationList = async function(classification_id = null){
     let data = await invModel.getClassificationRows()
     let classificationList = 
-      '<select name="classification_id" id="classificationId" required>'
+      '<select name="classification_id" id="classificationId">'
     classificationList += "<option>Choose a Classification</option>"
     data.forEach(type => {
       classificationList += '<option value="' + type.classification_id +'"'
