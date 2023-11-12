@@ -67,12 +67,12 @@ invCont.buildAddClassification = async function (req, res, next) {
 * *************************************** */
 invCont.buildAddInventory = async function (req, res, next) {
   const data = await invModel.getClassificationRows()
-  let options = await utilities.buildClassificationOptions(data)
+  let classificationList = await utilities.buildClassificationList(data)
   let nav = await utilities.getNav()
   res.render("inventory/add-inventory", {
     title: "New Inventory",
     nav,
-    options,
+    classificationList,
     errors: null,
   })
 }
@@ -114,6 +114,7 @@ invCont.buildAddInventory = async function (req, res, next) {
 * *************************************** */
 invCont.processInventory = async function (req, res) {
   const { inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id } = req.body
+  //console.log(inv_make, inv_model, inv_year, inv_description, inv_image, inv_thumbnail, inv_price, inv_miles, inv_color, classification_id)
   const inventoryResult = await invModel.addInventory(
     inv_make, 
     inv_model, 
@@ -127,7 +128,7 @@ invCont.processInventory = async function (req, res) {
     classification_id
   )
 
-  if (invengtoryResult) {
+  if (inventoryResult) {
     req.flash(
       "notice",
       `Congratulations, you\'ve added ${inv_year} ${inv_make} ${inv_model} to your inventory`

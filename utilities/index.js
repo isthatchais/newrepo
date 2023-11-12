@@ -110,21 +110,28 @@ Util.buildClassificationGrid = async function(data){
   }
 
 /* **************************************
-* Build the classification options HTML
+* Build the classification List HTML
 * ************************************ */
-  Util.buildClassificationOptions = async function(data){
-    let options
-    if(data){
-      data.forEach(type => {
-        options += '<option value="' + type.classification_id + '">' + type.classification_name + '</option>'
-      })
-    } else {
-      options = "<option>Options could not be found.</option>"
-    }
-    return options
+  Util.buildClassificationList = async function(classification_id = null){
+    let data = await invModel.getClassificationRows()
+    let classificationList = 
+      '<select name="classification_id" id="classificationId" required>'
+    classificationList += "<option>Choose a Classification</option>"
+    data.forEach(type => {
+      classificationList += '<option value="' + type.classification_id +'"'
+      if (
+        classification_id != null &&
+        type.classification_id == classification_id
+      ) {
+        classificationList += " selected "
+      }
+      classificationList += ">" + type.classification_name + '</option>'
+    })
+    classificationList += '</select>'
+    return classificationList
   }
 
-
+ 
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

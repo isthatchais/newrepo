@@ -28,5 +28,12 @@ router.post(
     utilities.handleErrors(invController.processClassification)
 );
 
+router.post(
+    "/add-inventory",
+    invValidate.inventoryRules(),
+    invValidate.checkInventoryData,
+    utilities.handleErrors(invController.processInventory)
+);
+
 
 module.exports = router;
