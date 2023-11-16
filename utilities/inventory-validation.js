@@ -54,6 +54,11 @@ validate.checkClassificationData = async (req, res, next) => {
  * ********************************* */
 validate.inventoryRules = () => {
   return [
+    body("classification_id")
+      .trim()
+      .notEmpty() 
+      .withMessage("Please select a classification."), // on error this message is sent.
+
     // inventory make is required and must be string minimum length of 3 charicters
     body("inv_make")
       .trim()
@@ -69,7 +74,6 @@ validate.inventoryRules = () => {
     // inventory year is required and must be a 4 digit year
     body("inv_year")
       .trim()
-      .isLength({ min: 4, max: 4})
       .matches(/^[0-9]{4}?$/)
       .withMessage("Please provide a 4 digit year."), // on error this message is sent.
 
@@ -94,13 +98,15 @@ validate.inventoryRules = () => {
 
     body("inv_price")
       .trim()
-      .isLength({ min: 3 })  
+      .isLength({ min: 3 })
+      .withMessage("The price must have at least 3 digits.") // on error this message is sent.
       .matches(/^[0-9]\d*(\.\d+)?$/)  //.(?:jpg|gif|png)$  //^[^\s]+\.(jpg|jpeg|png|gif|bmp)$ ^[1-9]\d*(\.\d+)?$ 
       .withMessage("Please provide a valid price."), // on error this message is sent.
 
     body("inv_miles")
       .trim()
       .notEmpty() 
+      .withMessage("Miles cannot be left blank.") // on error this message is sent.ge 
       .matches(/^[0-9]+$/)  //.(?:jpg|gif|png)$  //^[^\s]+\.(jpg|jpeg|png|gif|bmp)$ ^[1-9]\d*(\.\d+)?$ 
       .withMessage("Please provide valid miles."), // on error this message is sent.
 
@@ -122,8 +128,7 @@ validate.checkInventoryData = async (req, res, next) => {
   errors = validationResult(req)
   if (!errors.isEmpty()) {
     let nav = await utilities.getNav()
-    const data = await invModel.getClassificationRows()
-    let classificationList = await utilities.buildClassificationList(data)
+    let classificationList = await utilities.buildClassificationList(classification_id)
     res.render("inventory/add-inventory", {
       errors,
       title: "Add Inventory",
