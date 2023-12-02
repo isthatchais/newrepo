@@ -1,0 +1,45 @@
+*/%>
+
+<h1><%= title %></h1>
+
+<%# display messages if any%>
+<%- messages() %>
+
+<%# display errors if any%>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
+
+<%# registration form %>
+<form class="register" action="/account/update-data" method="post">
+    <fieldset>
+        <p>Change Your Account Data.</p>
+        <label class="top">First name<input type="text" id="accountFirstname" name="account_firstname" required pattern="^[a-zA-Z]{1,}?$" value="<%= locals.accountData.account_firstname %>"></label>
+        <label class="top">Last name<input type="text" id="accountLastname" name="account_lastname" required pattern="^[a-zA-Z]{2,}?$" value="<%= locals.accountData.account_lastname %>"></label>
+        <label class="top">Email address<input type="email" id="accountEmail" name="account_email" required value="<%= locals.accountData.account_email %>"></label>
+        <input type="hidden" name="account_id"
+        <% if(locals.accountData.account_id) { %> value="<%= locals.accountData.account_id %>"
+        <% } %>>
+        <input type="submit" id='data-button' value="Update Data" class="button">
+    </fieldset>
+</form>
+<form class="register" id="change-password" action="/account/update-password" method="post">
+    <fieldset>
+        <p>Change Your Password</p>
+        <label class="top">Password<input type="password" id="accountPassword" name="account_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"></label>
+        <input type="hidden" name="account_id"
+        <% if(locals.accountData.account_id) { %> value="<%= locals.accountData.account_id %>"
+        <% } %>>
+        <p id="pswdBtn" class="button">Show Password</p>
+        <p>Your password must be 12 characters minimum and contain at least 1 capital letter, 1 number, and 1 special character.</p>
+        <p>By clicking Update Password you will change your password and it cannot be undone. </p>
+        <input type="submit" id='login-button' value="Update Password" class="button">
+    </fieldset>
+</form>
+
+<script src="/js/script.js"></script>

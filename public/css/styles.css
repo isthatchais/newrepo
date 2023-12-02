@@ -156,7 +156,7 @@ footer{
     border: 5px solid lightskyblue;
     border-radius: .5rem;
     max-width: 350px;
-    height: 250px;
+    height: 225px;
     text-align: center;
 }
 #inv-display li{
@@ -292,6 +292,34 @@ form label.top input:required:valid {
 #inventory-submit{
     margin-top: 2rem;
 }
+#update-submit{
+    margin-top: 2rem;
+}
+#data-button{
+    margin-top: 2rem;
+}
+#change-password{
+    margin-top: 3rem;
+}
+.managementTable th, td{
+    border: none;
+}
+.managementTable{
+    border-spacing: 1.3rem;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    padding: .5rem;
+}
+#account_firstname{
+    font-family: 'lora', serif;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+#loggedin{
+    margin-left: 2em;
+}
+
 
 @media only screen and (min-width: 30em){
     #wrapper{
@@ -337,7 +365,7 @@ form label.top input:required:valid {
     .button{
         padding: .7rem;
         font-size: 1rem;
-        width: 120px;
+        width: 130px;
         margin-bottom: .5rem;
     }
     .reviews ul{
@@ -385,6 +413,9 @@ form label.top input:required:valid {
     h2{
         font-size: 2.3rem;
     }
+    #account_firstname{
+        font-size: 2.3rem;
+    }
     nav ul li a{
         line-height: 2.5rem;
     }
@@ -400,7 +431,7 @@ form label.top input:required:valid {
     }
     .button{
         font-size: 1.3rem;
-        width: 200px;
+        width: 225px;
         margin-bottom: 1.5rem;
     }
     h3.button{
@@ -456,5 +487,8 @@ form label.top input:required:valid {
     .info_cols{
         display: grid;
         grid-template-columns: 35% 60%;
+    }
+    .card{
+        height: 325px;
     }
 }

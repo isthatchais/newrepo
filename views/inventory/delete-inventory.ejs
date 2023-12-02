@@ -1,0 +1,34 @@
+<%/* 
+Content Heading using the title value in the controller 
+*/%>
+
+<h1><%= locals.title %></h1>
+
+<%# display messages if any%>
+<%- messages() %>
+
+<%# display errors if any%>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
+
+<%# registration form %>
+<form class="register" id="updateForm" action="/inv/delete" method="post">
+    <fieldset>
+        <p>Carefuly review the following information to confirm you have the correct vehicle. Once the "Delete Vehicle" button is clicked it cannot be undone</p>
+        <label class="top">Make<input type="text" id="invMake" name="inv_make" placeholder="Min of 3 characters" required pattern="^[a-zA-Z]{3,}?$" value="<%= locals.inv_make %>"></label>
+        <label class="top">Model<input type="text" id="invModel" name="inv_model" placeholder="Min of 3 characters" required pattern="^[a-zA-Z0-9\s]{3,}?$" value="<%= locals.inv_model %>"></label>
+        <label class="top">Price<input type="text" id="invPrice" name="inv_price" placeholder="Decimal or Integer" required pattern=^[0-9]\d*(\.\d+)?$ value="<%= locals.inv_price %>"></label>
+        <label class="top">Year<input type="text" id="invYear" name="inv_year" required pattern="^[0-9]{4}?$" placeholder="4 digit year" value="<%= locals.inv_year %>"></label>
+        <label class="top">Miles<input type="text" id="invMiles" name="inv_miles" placeholder="digits only" required pattern="^[0-9]*$" value="<%= locals.inv_miles %>"></label>
+        <input type="hidden" name="inv_id"
+        <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+        <% } %>>
+        <input type="submit" id='update-submit' value="Delete Vehicle" class="button">
+    </fieldset>
+</form>

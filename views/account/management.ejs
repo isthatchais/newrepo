@@ -1,0 +1,31 @@
+<%/* 
+Content Heading using the title value in the controller 
+*/%>
+
+<h1><%= title %></h1>
+
+<%# display messages if any%>
+<%- messages() %>
+
+<%# display errors if any%>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+
+<h2>Welcome <span id="account_firstname" ><%- locals.accountData.account_firstname %></span> You're logged in</h2>
+ 
+<% if (locals.accountData.account_type != 'Client') { %>
+  <h3>Manage Vehicle Inventory</h3>
+  <a href="/inv/"><p>Inventory Management</p></a>
+<%  }  %>
+
+<input type="hidden" name="account_id"
+  <% if(locals.accountData.account_id) { %> value="<%= locals.accountData.account_id %>"
+    <% } %>>
+
+<h3>Update Account Information</h3>
+<a href="/account/update"><p>Update Account</p></a>
